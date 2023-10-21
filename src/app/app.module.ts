@@ -10,6 +10,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { AuthGuard } from "@angular/fire/auth-guard";
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -25,7 +26,10 @@ import { AuthGuard } from "@angular/fire/auth-guard";
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
   ],
-  providers: [AuthGuard],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
