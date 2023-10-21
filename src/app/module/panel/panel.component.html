@@ -1,0 +1,61 @@
+<div id="panel-c">
+    <header [ngClass]="{'recolher': isMenu}">
+        <button id="recolher" (click)="isMenu=!isMenu"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <div>
+            <div>
+                <nav>
+                    <h1><img src="/assets/svg/logo.svg" alt="Notas Mentais" /></h1>
+                    <p-calendar
+                        [(ngModel)]="date"
+                        [inline]="true"
+                        (ngModelChange)="getNote()"
+                        locale="pt-BR"
+                        [showOtherMonths]="false"
+                        (onMonthChange)="changeMonth($event)"
+                    >
+                    <ng-template pTemplate="date" let-date >
+                        <span [ngClass]="{'date-note': paintDay(date)}"><span>{{date.day}}</span></span>
+                    </ng-template>
+                    </p-calendar>
+                </nav>
+                <button (click)="logout()">Sair</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <span id="title-note">
+                <p-calendar
+                    id="title-selec"
+                    dateFormat="dd/mm/yy"
+                    [readonlyInput]="true"
+
+                    
+                    [(ngModel)]="date"
+                    (ngModelChange)="getNote()"
+                    locale="pt-BR"
+                    [showOtherMonths]="false"
+                    (onMonthChange)="changeMonth($event)"
+                >
+                    <ng-template pTemplate="date" let-date >
+                        <span [ngClass]="{'date-note': paintDay(date)}"><span>{{date.day}}</span></span>
+                    </ng-template>
+                </p-calendar>                
+            </span>
+            <ng-container *ngIf="loading">
+                <quill-editor [(ngModel)]="text" [placeholder]="'Nota mental referente a '+printDate"></quill-editor>
+                <button (click)="save()">{{textButton}}</button>
+            </ng-container>
+            <ng-container *ngIf="!loading">
+                <div id="carregando">
+                    <i class="fa-duotone fa-spinner-third"></i>
+                    <p>Carregando</p>
+                </div>
+            </ng-container>
+            
+        </div>
+        <footer>
+            <button (click)="logout()">Sair</button>
+        </footer>
+    </main>
+</div>

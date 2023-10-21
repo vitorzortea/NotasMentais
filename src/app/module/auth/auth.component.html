@@ -1,0 +1,53 @@
+<div id="auth-c">
+    <main>
+        <h1><img src="/assets/svg/logo.svg" alt="Notas Mentais" /></h1>    
+        <div>
+            <h2><i class="fa-duotone fa-arrow-right"></i> Bem-Vindo</h2>
+            <label>
+                <i class="fa-light fa-envelope"></i>
+                <input [(ngModel)]="email" type="email" placeholder="E-mail">
+            </label>
+            <label>
+                <i class="fa-light fa-lock"></i>
+                <input [(ngModel)]="senha" type="password" placeholder="Senha">
+            </label>
+            <button (click)="login()" type="submit">Entrar</button>
+            <section>
+                <a routerLink="/path">Criar Conta</a>
+                <a routerLink="/path">Esqueci a Senha</a>
+            </section>
+            <object type="image/svg+xml" data="/assets/svg/menino.svg"></object>
+        </div>
+    </main>
+    <div>    
+        <span id="curve1"></span>
+        <span id="curve2"></span>
+        <object type="image/svg+xml" data="/assets/svg/menino.svg"></object>
+    </div>
+
+
+
+    <!--
+        <div id="bg-auth">
+            <span id="curve1"></span>
+            <span id="curve2"></span>
+        </div>
+        <main>
+            <h1><img src="/assets/svg/logo.svg" alt="Notas Mentais" /></h1>
+            <div>
+                <form>
+                    <label>
+                        <i class="fa-light fa-envelope"></i>
+                        <input type="email" placeholder="E-mail">
+                    </label>
+                    <label>
+                        <i class="fa-light fa-lock"></i>
+                        <input type="password" placeholder="Senha">
+                    </label>
+                    <button type="submit">Entrar</button>
+                </form>
+                <object type="image/svg+xml" data="/assets/svg/menino.svg"></object>
+            </div>
+        </main>
+    -->
+</div>
