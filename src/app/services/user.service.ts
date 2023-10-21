@@ -24,7 +24,7 @@ export class UserService {
     signOut(this.auth)
     .then((e)=>{
       this.router.navigateByUrl('/');
-      window.location.reload();
+      //window.location.reload();
     })
   }
 }
