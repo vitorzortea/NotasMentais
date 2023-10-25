@@ -170,3 +170,8 @@
     #panel-c>main>footer { display: block; }
     .ql-container{ height: none; }
 }
+
+span#title-note {
+    position: relative;
+    z-index: 2000;
+}
