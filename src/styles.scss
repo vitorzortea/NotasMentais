@@ -104,4 +104,20 @@ a{
     .ql-container.ql-snow { min-height: auto; height: auto; }
     .ql-editor{height: auto;}
     .ql-editor *:last-child {height: auto;}
+
+    
+    quill-editor {
+        overflow: auto;
+        position: relative;
+        .ql-toolbar.ql-snow {
+            width: max-content;
+            padding-top: 40px;
+        }
+        .ql-container.ql-snow {
+            position: sticky;
+            left: 0;
+            top: 0;
+            min-height: 15em;
+        }
+    }
 }
