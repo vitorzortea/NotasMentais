@@ -190,6 +190,6 @@ export class PanelComponent implements OnInit {
     get isDay(){ return this.myDate.includes(Number(moment(this.date).format('DD'))); }
     get textButton(){ if(this.text){if(this.isDay){return 'Editar'}else{return 'Salvar'}}else{if(this.isDay){return 'Deletar'}else{return 'Salvar'}} }
     get printDate(){ return moment(this.date).format('DD/MM/YY') }
-    get dateDoc(){ return '/dates/'+moment(this.ViewMounth).format('YYYY-MM')+'-'+this.userService.getUser.uid }
-    get notesDoc(){ return '/notes/'+moment(this.date).format('YYYY-MM-DD')+'-'+this.userService.getUser.uid }
+    get dateDoc(){ return '/dates/'+moment(this.ViewMounth).format('YYYY-MM')+'-'+'S8SRjdiqsyaSe2NXZFZfKkKJjhe2'/*this.userService.getUser.uid*/ }
+    get notesDoc(){ return '/notes/'+moment(this.date).format('YYYY-MM-DD')+'-'+'S8SRjdiqsyaSe2NXZFZfKkKJjhe2'/*this.userService.getUser.uid*/ }
 }
